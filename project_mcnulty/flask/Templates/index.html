@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.4/bokeh.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.4/bokeh-widgets.min.css" type="text/css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.4/bokeh.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.4/bokeh-widgets.min.js"></script>
+
+  </head>
+  <style type="text/css">
+		body{
+		background: lightblue;
+		}
+		h1{
+		background: silver;
+		}
+		a:link, a:visited {
+  		background-color: grey;
+  		color: white;
+  		padding: 15px 25px;
+ 		 text-align: center;
+ 		 text-decoration: none;
+ 		 display: inline-block;
+		}
+
+		a:hover, a:active {
+  		background-color: silver;
+		}
+	​
+	</style>
+  <body>
+      <a target="_self" href="http://127.0.0.1:5000/static/hello.html" >Predict Index Input</a>
+      <a target="_self" href="http://127.0.0.1:5000/static/predict.html">Predict Raw Input</a>
+      <h1>Plots</h1>
+      <div style="width: 50%">
+        {{ div | safe }}
+      </div>
+  </body>
+  <!-- import our script, mark as 'safe' so python doesn't strip dangerous characters from us -->
+  {{ javascript | safe }}
+</html>

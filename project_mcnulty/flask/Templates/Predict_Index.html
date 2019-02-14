@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Index Input</title>
+
+	  <style type="text/css">
+		body{
+		background: lightblue;
+		}
+		h1{
+		background: silver;
+		}
+		a:link, a:visited {
+  		background-color: grey;
+  		color: white;
+  		padding: 15px 25px;
+ 		 text-align: center;
+ 		 text-decoration: none;
+ 		 display: inline-block;
+		}
+
+		a:hover, a:active {
+  		background-color: silver;
+		}
+		</style>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+	</script>
+  </head>
+  <body>
+  	<a href="http://127.0.0.1:5000/plots">Plots</a>
+	<a href="http://127.0.0.1:5000/Predict_Raw.html">Predict Raw Input</a>
+	<br>
+    <h1> Amazon Resource Access </h1>
+
+	<input id="name-input" type="text"/>
+	<button id="name-button">Request Access (test index)</button>
+	<p id="greeting"></p>
+
+
+	<script>
+
+		$("#name-button").click(function(event){
+			let message = {
+				name: $("#name-input").val()
+			}
+			console.log(message)
+			$.post("http://127.0.0.1:5000/predict", JSON.stringify(message), function(response){
+				$("#greeting").text('Request ' +response);
+				console.log(response);
+			});
+		});
+	</script>
+  </body>
+</html>

@@ -14,7 +14,7 @@ from flask import Flask, render_template
 from bokeh.plotting import figure
 from bokeh.embed import components
 import numpy as np
-app = Flask('using bokeh')
+#app = Flask('using bokeh')
 
 
 
